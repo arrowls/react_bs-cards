@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./Card";
 
 function App() {
+    const exampleLink = {
+        href: 'https://youtube.com/',
+        title: 'YouTube',
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container-sm p-lg-5 vh-100 d-flex flex-row flex-wrap align-content-lg-start gap-2">
+          <Card title="test" description="test" >
+              <img src="https://source.unsplash.com/random" alt="test" className="card-img-top"/>
+          </Card>
+          <Card title="YouTube" description="Search for cool videos here" subtitle="Learn here!" links={[exampleLink]}>
+              <img src="https://source.unsplash.com/random" alt="test" className="card-img-top"/>
+          </Card>
+          <Card title="No img required" description="also works without an image"/>
+      </div>
     </div>
   );
 }
